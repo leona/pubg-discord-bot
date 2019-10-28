@@ -21,6 +21,7 @@
 # RUNTIME
 
 ./bin/production-manage.sh
+
 ./bin/production-report.sh
 
 ;config-set listener.channel.name squad
@@ -29,6 +30,7 @@
 
 # Create tmux sessions
 tmux new -s reporter
+
 tmux new -s manager
 
 # List sessions
@@ -36,6 +38,7 @@ tmux ls
 
 # attach to sessions
 tmux attach-session -t reporter
+
 tmux attach-session -t manager
 
 # CTRL + B D to exit
