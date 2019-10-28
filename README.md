@@ -1,6 +1,6 @@
 # Features
 - PUBG API Monitoring for automatically posting match stats in "chicken-dinners" and "reports" channels
-- http://pubg.report is monitored when you are in a voice channel and will get posted in "reports" text channel if you kill or get killed by a twitch streamer 
+- http://pubg.report Twitch streamers you engage with are monitored when you are in a voice channel and will get posted in "reports" text channel if you kill or get killed by them.
 - https://pubg.sh telemetry timelapse is posted with each report. Very useful for seeing where that sneaky opponent was hiding after a game. 
 - You must have a KD of at least 1 to join. This is currently how I want it, as playing in other discord servers without this was like playing on randoms. 
 - Channels for people with > 1 KD and > 2 KD
