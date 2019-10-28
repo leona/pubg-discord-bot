@@ -1,0 +1,23 @@
+box: wercker/default
+
+deploy:
+    steps:
+        - add-to-known_hosts:
+            hostname: $HOSTNAME
+        - mktemp:
+            envvar: PRIVATEKEY_PATH
+        - create-file:
+            name: write key
+            filename: $PRIVATEKEY_PATH
+            content: $WERCKER_PRIVATE
+            overwrite: true
+        - script:
+            name: remove old files
+            code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOSTNAME rm -rf /home/discord/*
+        - script:
+            name: transfer files
+            code: |
+                scp -r -i $PRIVATEKEY_PATH ./* root@$HOSTNAME:/home/discord
+        - script:
+            name: restart nginx
+            code: ssh -i $PRIVATEKEY_PATH -l root -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no $HOSTNAME sudo reboot now

@@ -1,0 +1,12 @@
+__pycache__/
+.py[cod]
+ideas
+database.sqlite
+dumps/
+tests/
+website
+.env
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
