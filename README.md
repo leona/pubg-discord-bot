@@ -24,8 +24,11 @@
 
 ./bin/production-report.sh
 
+# Setup commands
 ;config-set listener.channel.name squad
+
 ;config-set notification.channel.streamReport reports
+
 ;config-set notification.channel.highRank reports
 
 # Create tmux sessions
@@ -45,4 +48,5 @@ tmux attach-session -t manager
 
 # cron
 @reboot /bin/bash /home/discord/bin/production-report.sh
+
 @reboot /bin/bash /home/discord/bin/production-manage.sh
